@@ -3,6 +3,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#tablero {
+	width: 200px;
+	height: 150px;
+	background-color: #000;
 }
+
