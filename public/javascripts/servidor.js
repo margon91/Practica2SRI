@@ -16,8 +16,12 @@ module.exports=function(io){
 				usernames.push(username);
 				socket.username = username;
 			}
-			console.log(socket.username);
+			
 			callback(esta_disponible);
+		});
+
+		socket.on('numero', function(numero) {
+			io.sockets.emit('numero', socket.username, numero);
 		});
 	});
 }
