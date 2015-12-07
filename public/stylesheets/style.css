@@ -14,6 +14,19 @@ body {
 	border-radius: 10px;
 }
 
+#login {
+	margin-top: 20px;
+	margin-left: 15px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+#username {
+	padding: 5px;
+	font-size: 15px;
+	margin-left: 5px;
+}
+
 #titulo {
 	margin-top: 20px;
 	font-size: 30px;
@@ -31,4 +44,8 @@ body {
 	font-size: 15px;
 	margin-left: 5px;
 	width: 50px;
+}
+
+#respuestas li {
+	list-style: none;
 }
