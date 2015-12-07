@@ -10,6 +10,7 @@ $(document).ready(function(){
 	var init = function() {
 		$("#pideNum").hide();
 		$("#respuesta").hide();
+		$("#login").show();
 		$("#username").keyup(function(e) {
 			var code = e.which || e.keyCode;
 
@@ -46,6 +47,11 @@ $(document).ready(function(){
 
 		socket.on('numero', function(username, numero) {
 			listaNumero(username, numero);
+		});
+
+		socket.on('ganador', function(msg) {
+			alert(msg);
+			init();
 		});
 
 	}
