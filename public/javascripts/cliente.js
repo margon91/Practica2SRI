@@ -7,5 +7,4 @@ $(document).ready(function(){
 			 socket.emit('saludo',saludo); // A modo de ejemplo emito un saludo
 			 
 			});
-
-})
+});

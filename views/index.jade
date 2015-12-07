@@ -1,10 +1,8 @@
 extends layout
 
 block content
-	div#tablero
-		div#carta1
-		div#carta2
-		div#carta3
-		div#carta4
-		div#carta5
-		div#carta6
+	div#main
+		p#titulo Adivina el número del 0 al 20
+		p#respuesta Introduce tu numero:
+			input(type='number' #numero)
+		ul#respuestas
