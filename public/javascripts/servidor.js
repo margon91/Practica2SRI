@@ -4,7 +4,8 @@ module.exports=function(io){
 	
 	var creaRandom = function() {
 		var numeroDecimal = (Math.random() * (1 - 51) + 51);
-		random = Math.floor(numeroDecimal);
+		var entero = Math.floor(numeroDecimal);
+		random = entero;
 	}
 
 	io.sockets.on ('connection',function(socket){
