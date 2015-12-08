@@ -2,7 +2,7 @@ module.exports=function(io){
 	var usernames = [];
 	//var numeroDecimal = (Math.random() * (1 - 51) + 51);
 	//var random = Math.floor(numeroDecimal);
-	var random = 1;
+	var random;
 	
 	var creaRandom = function(random) {
 		numeroDecimal = (Math.random() * (1 - 51) + 51);
