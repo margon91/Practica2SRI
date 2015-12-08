@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-   	var socket=io.connect('localhost:3000');
+   	var socket=io.connect();
 
 	socket.on('connect', function() {
 		console.log("Cliente conectado con socket");
