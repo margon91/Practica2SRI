@@ -9,7 +9,6 @@ $(document).ready(function(){
 
 	var init = function() {
 		$("#pideNum").hide();
-		$("#respuesta").hide();
 		$("#login").show();
 		$("#username").keyup(function(e) {
 			var code = e.which || e.keyCode;
@@ -40,7 +39,6 @@ $(document).ready(function(){
 			if(code == 13) {
 				var numero = $("#numero").val();
 				enviaNumero(numero);
-				//$("#respuestas").append("<li>" + numero + "</li>");
 				$("#numero").val("");
 			}
 		});
@@ -51,9 +49,20 @@ $(document).ready(function(){
 
 		socket.on('ganador', function(msg) {
 			alert(msg);
-			init();
+			window.location.reload();
 		});
 
+		socket.on('no_numero', function(numero) {
+			$("#error").html("Has introducido " + numero + ". No es un numero.");
+		});
+
+		socket.on('vacio', function() {
+			$("#error").html("Debes introducir un numero.");
+		});
+
+		socket.on('numero_no_valido', function(numero) {
+			$("#error").html("Tu numero (" + numero + ") debe ser mayor que 0 y menor que 50.");
+		});
 	}
 
 	var enviaNumero = function(numero) {

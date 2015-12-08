@@ -2,10 +2,10 @@ extends layout
 
 block content
 	div#main
-		p#titulo Adivina el número del 0 al 20
+		p#titulo Adivina el número del 1 al 50
 		p#login Introduce tu nombre para empezar:
 			input#username(type='text', size='10')
-		p#respuesta La respuesta correcta es
+		p#error
 		p#pideNum Introduce tu numero:
-			input#numero(type='number')
+			input#numero(type='text')
 		ul#respuestas
