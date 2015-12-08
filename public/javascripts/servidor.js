@@ -3,9 +3,9 @@ module.exports=function(io){
 	var numeroDecimal = (Math.random() * (1 - 51) + 51);
 	var random = Math.floor(numeroDecimal);
 	
-	var creaRandom = function() {
+	var creaRandom = function(random) {
 		var numeroDecimal = (Math.random() * (1 - 51) + 51);
-		var random = Math.floor(numeroDecimal);
+		random = Math.floor(numeroDecimal);
 	}
 
 	io.sockets.on ('connection',function(socket){
@@ -37,7 +37,7 @@ module.exports=function(io){
 							var msg = socket.username + " ha acertado el numero " + numero;
 							io.sockets.emit('ganador', msg);
 							usernames = [];
-							creaRandom();
+							creaRandom(random);
 						}
 						io.sockets.emit('numero', socket.username, numero);
 					} else
