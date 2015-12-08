@@ -2,16 +2,15 @@ module.exports=function(io){
 	var usernames = [];
 	//var numeroDecimal = (Math.random() * (1 - 51) + 51);
 	//var random = Math.floor(numeroDecimal);
-	var random;
 	
-	var creaRandom = function(random) {
+	var creaRandom = function() {
 		numeroDecimal = (Math.random() * (1 - 51) + 51);
-		random = Math.floor(numeroDecimal);
+		var random = Math.floor(numeroDecimal);
 	}
 
 	io.sockets.on ('connection',function(socket){
 		console.log("Cliente conectado");
-		creaRandom(random);
+		creaRandom();
 
 		socket.on('set_username', function(username, callback) {
 			if(username != "") {
@@ -39,7 +38,7 @@ module.exports=function(io){
 							var msg = socket.username + " ha acertado el numero " + numero;
 							io.sockets.emit('ganador', msg);
 							usernames = [];
-							creaRandom(random);
+							creaRandom();
 						}
 						io.sockets.emit('numero', socket.username, numero);
 					} else
