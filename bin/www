@@ -9,3 +9,7 @@ var server = app.listen(app.get('port'), function() {
 });
 var io=require('socket.io').listen(server);
 require('../public/javascripts/servidor')(io);
+
+io.configure(function() {
+	io.set("transports", ['websockets', 'xhr-polling']);
+});
