@@ -32,6 +32,7 @@ module.exports=function(io){
 						if(numero == random) {
 							var msg = socket.username + " ha acertado el numero " + numero;
 							io.sockets.emit('ganador', msg);
+							usernames = [];
 						}
 						io.sockets.emit('numero', socket.username, numero);
 					} else
