@@ -47,6 +47,15 @@ $(document).ready(function(){
 			listaNumero(username, numero);
 		});
 
+
+		socket.on('mayor', function(msg) {
+			$("#info").html(msg);
+		});
+
+		socket.on('menor', function(msg) {
+			$("#info").html(msg);
+		});
+
 		socket.on('ganador', function(msg) {
 			alert(msg);
 			window.location.reload();

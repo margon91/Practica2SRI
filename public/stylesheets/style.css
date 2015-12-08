@@ -41,6 +41,13 @@ body {
 	color: red;
 }
 
+#info {
+	margin-top: 20px;
+	margin-left: 15px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
 #pideNum {
 	margin-left: 15px;
 	font-size: 17px;
