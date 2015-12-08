@@ -1,11 +1,11 @@
 module.exports=function(io){ 
 	var usernames = [];
-	var random;
+	var numeroDecimal = (Math.random() * (1 - 51) + 51);
+	var random = Math.floor(numeroDecimal);
 	
 	var creaRandom = function() {
 		var numeroDecimal = (Math.random() * (1 - 51) + 51);
-		var entero = Math.floor(numeroDecimal);
-		random = entero;
+		var random = Math.floor(numeroDecimal);
 	}
 
 	io.sockets.on ('connection',function(socket){
@@ -32,7 +32,7 @@ module.exports=function(io){
 		socket.on('numero', function(numero) {
 			if(numero != "") {
 				if(!isNaN(numero)) {
-					if(numero > 0 && numero < 50) {
+					if(numero > 0 && numero < 51) {
 						if(numero == random) {
 							var msg = socket.username + " ha acertado el numero " + numero;
 							io.sockets.emit('ganador', msg);
