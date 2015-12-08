@@ -1,15 +1,17 @@
 module.exports=function(io){ 
 	var usernames = [];
-	var numeroDecimal = (Math.random() * (1 - 51) + 51);
-	var random = Math.floor(numeroDecimal);
+	//var numeroDecimal = (Math.random() * (1 - 51) + 51);
+	//var random = Math.floor(numeroDecimal);
+	var random = 1;
 	
 	var creaRandom = function(random) {
-		var numeroDecimal = (Math.random() * (1 - 51) + 51);
+		numeroDecimal = (Math.random() * (1 - 51) + 51);
 		random = Math.floor(numeroDecimal);
 	}
 
 	io.sockets.on ('connection',function(socket){
 		console.log("Cliente conectado");
+		creaRandom(random);
 
 		socket.on('set_username', function(username, callback) {
 			if(username != "") {
