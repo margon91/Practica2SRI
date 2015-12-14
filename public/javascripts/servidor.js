@@ -30,10 +30,10 @@ module.exports=function(io){
 					if(numero > 0 && numero < 51) {
 						if(numero > random) {
 							var msg = numero + " es mayor";
-							io.sockets.emit('mayor', msg);
+							socket.emit('mayor', msg);
 						} else if(numero < random) {
 							var msg = numero + " es menor";
-							io.sockets.emit('menor', msg);
+							socket.emit('menor', msg);
 						}else if(numero == random) {
 							var msg = socket.username + " ha acertado el numero " + numero;
 							io.sockets.emit('ganador', msg);
